@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tarea - Gestor de Tareas Interactivo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 30px auto;
+      }
+      form {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      input,
+      select,
+      button {
+        padding: 8px;
+      }
+      .completada {
+        text-decoration: line-through;
+        color: #7f8c8d;
+      }
+      .error-msg {
+        color: #c0392b;
+        font-size: 0.9em;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .badge {
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        color: white;
+      }
+      .Alta {
+        background: #e74c3c;
+      }
+      .Media {
+        background: #f39c12;
+      }
+      .Baja {
+        background: #2ecc71;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gestor de Tareas por Prioridad</h1>
+
+    <form id="formTarea">
+      <input id="txtTitulo" type="text" placeholder="Nueva tarea..." />
+      <select id="selPrioridad">
+        <option value="Alta">Alta</option>
+        <option value="Media" selected>Media</option>
+        <option value="Baja">Baja</option>
+      </select>
+      <button type="submit">Agregar</button>
+    </form>
+    <p id="msjValidacion" class="error-msg"></p>
+
+    <input
+      id="txtFiltro"
+      type="text"
+      placeholder="Filtrar por texto..."
+      style="width: 97%; margin-bottom: 12px"
+    />
+
+    <ul id="listaTareas"></ul>
+    <p>Total de tareas pendientes: <span id="numPendientes">0</span></p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
